@@ -1,5 +1,5 @@
 // Preambule
-#show math.equation: set text(16pt)
+#show math.equation: set text(14pt)
 #show figure.where(kind: "image"): set figure(supplement: [Рис.])
 
 #set page(
@@ -10,7 +10,7 @@
 
 #set text(
   font: "New Computer Modern",
-  size: 16pt
+  size: 14pt
 )
 
 // Title
@@ -100,7 +100,6 @@ cases(
 gamma_1 = vec(1, 0, -1) => gamma_1^o = 1/sqrt(2) vec(1, 0, -1)
 $
 
-#pagebreak()
 #stroke-line
 
 $lambda_2 = 3:$
@@ -123,7 +122,9 @@ cases(
 gamma_2 = vec(1, 0, 1) => gamma_2^o = 1/sqrt(2) vec(1, 0, 1)
 $
 
+
 #stroke-line
+#pagebreak()
 
 $lambda_3 = 4:$
 
@@ -388,10 +389,7 @@ cases(
 $
 
 Тогда:
-
-$
-y = 1/8 e^(2x) + 2/3 e^(x) - 1/24 e^(-2x) -1/6 x^3 -1/2 x^2 - x + 3/4
-$
+$y = 1/8 e^(2x) + 2/3 e^(x) - 1/24 e^(-2x) -1/6 x^3 -1/2 x^2 - x + 3/4$
 
 #figure(
   image("integral_curves_large_a.png"),
@@ -516,21 +514,19 @@ $
 ]
 
 
-#linebreak()
-#linebreak()
 
 == Задание 2
 
 _Условие_:
 
-    Найдите общее решение системы матричным способом.
-    $
-    cases(
-      x' = x - y + z,
-      y' = x + y - z,
-      z' = 2x - y
-    )
-    $
+Найдите общее решение системы матричным способом.
+$
+cases(
+  x' = x - y + z,
+  y' = x + y - z,
+  z' = 2x - y
+)
+$
 
 _Решение_:
 
@@ -551,7 +547,6 @@ X'(t) = A X(t)
 $
 
 Ищем решение в виде $X(t) = Gamma e^(lambda t)$.
-
 Найдём собственные числа для матрицы $A$:
 $
 |A - lambda cal(I)| = 0 
@@ -602,7 +597,6 @@ $
 
 Пусть $z = 1$, тогда $Gamma_1 = vec(1, 1, 1)$
 
-#pagebreak()
 
 #stroke-line
 
@@ -662,27 +656,20 @@ C_1 e^t vec(1, 1, 1) + C_2 e^(2t) vec(1, 0, 1) + C_3 e^(-t) vec(-1, 3, 5)
 $
 
 Запишем общее решение в виде системы:
-$
-  cases(
-    x(t) = C_1 e^t + C_2 e^(2t) - C_3 e^(-t),
-    y(t) = C_1 e^t + 3C_3 e^(-t),
-    z(t) = C_1 e^t + C_2 e^(2t) + 5C_3 e^(-t)
-  )
-$
-
-#figure(
-  image("dif_system.png"),
-  kind: "image",
-  caption: [Изображение некоторых частных решений]
-)
-
-#box(stroke: black, outset: (x: 10pt, y: 10pt))[
-_Ответ_:
-$
-  cases(
-    x(t) = C_1 e^t + C_2 e^(2t) - C_3 e^(-t),
-    y(t) = C_1 e^t + 3C_3 e^(-t),
-    z(t) = C_1 e^t + C_2 e^(2t) + 5C_3 e^(-t)
-  )
-$
+#align(center)[
+  #box(stroke: black, outset: (x: 10pt, y: 10pt))[
+  _Ответ_:
+  $
+    cases(
+      x(t) = C_1 e^t + C_2 e^(2t) - C_3 e^(-t),
+      y(t) = C_1 e^t + 3C_3 e^(-t),
+      z(t) = C_1 e^t + C_2 e^(2t) + 5C_3 e^(-t)
+    )
+  $
+  ]
 ]
+#figure(
+  image("dif_system.png", height: 45%),
+  kind: "image",
+  caption: [Изображение некоторых частных решений системы]
+)
